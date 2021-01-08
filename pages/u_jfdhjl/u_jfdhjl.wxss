@@ -1,0 +1,88 @@
+/* pages/u_jfdhjl/u_jfdhjl.wxss */
+page{
+  background:#f6f6f6;
+}
+.app{
+  width: 100%;
+  padding: 25rpx;
+  box-sizing: border-box;
+}
+.list{
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  background: white;
+  margin-bottom: 25rpx;
+}
+.list_top{
+  width: 100%;
+  display: flex;
+}
+.list_top_left{
+  width: 20%;
+}
+.list_top_left image{
+  width: 100rpx;
+  height: 100rpx;
+  display: block;
+  border-radius: 5rpx;
+}
+.list_top_right{
+  width: 80%;
+}
+.list_top_right_name{
+  width: 100%;
+  color: #000;
+  font-size: 28rpx;
+  font-weight: 700;
+}
+.list_top_right_score{
+  width: 100%;
+  color: #666;
+  font-size: 26rpx;
+}
+.list_fot{
+  width: 100%;
+}
+.list_fot_one{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 15rpx 0;
+}
+.list_fot_onev{
+  width: 50%;
+  color: #1a1a1a;
+  font-size: 26rpx;
+}
+.list_fot_two{
+  width: 100%;
+  color: #1a1a1a;
+  font-size: 26rpx;
+  margin-bottom: 15rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.list_bot{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.list_bot_v{
+  width: 200rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  background: #306dff;
+  border-radius: 10rpx;
+  color: white;
+  box-shadow: #a4b1d2 0 2px 10px;
+  font-size: 26rpx;
+}
+.list_zt{
+  color: #698fba;
+  font-weight: 700;
+}

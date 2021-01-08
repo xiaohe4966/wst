@@ -1,0 +1,90 @@
+<!--pages/s_storesxq/s_storesxq.wxml-->
+<view class="app">
+  <view class="head_img">
+    <swiper style='height:350rpx;' indicator-dots="{{indicatorDots}}" circular="{{circular}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" data-index='{{index}}' mode="aspectFill" />
+        </swiper-item> 
+      </block>
+    </swiper>
+    <!-- <image src="{{info.banner_image}}" mode="aspectFill"></image> -->
+  </view>
+  <view class="head">
+    <view class="head_left">
+      <view class="head_name">{{info.ltd_name}}</view>
+      <view class="head_lv">
+        <view class="head_lv_v1">信誉：</view>
+        <view class="head_lv_v2">
+          <block wx:if='{{info.level <= 5}}'>
+            <image wx:for="{{info.level}}" src="../../image/lv_01.png"></image>
+          </block>
+          <block wx:if='{{5 < info.level && info.level <= 10}}'>
+            <image wx:for="{{info.level}}" src="../../image/lv_02.png"></image>
+          </block>
+          <block wx:if='{{10 < info.level && info.level <= 15}}'>
+            <image wx:for="{{info.level}}" src="../../image/lv_03.png"></image>
+          </block>
+          <block wx:if='{{15 < info.level && info.level <= 20}}'>
+            <image wx:for="{{info.level}}" src="../../image/lv_04.png"></image>
+          </block>
+          <block wx:if='{{20 < info.level && info.level <= 25}}'>
+            <image wx:for="{{info.level}}" src="../../image/lv_05.png"></image>
+          </block>
+        </view>
+        <view class="head_lv_v3">{{info.level}}级</view>
+      </view>
+      <view class="head_con">
+        <text class="head_con_t1">浏览量：</text>
+        <text class="head_con_t2">{{info.look_num}}</text>
+      </view>
+      <view class="head_con">
+        <text class="head_con_t1">主营：</text>
+        <text class="head_con_t2">{{info.core}}</text>
+      </view>
+    </view>
+    <view class="head_right">
+      <view class="head_right_v" wx:if='{{info.star == false}}' data-id='{{info.id}}' catchtap="gztap">
+        <image src="../../image/sc_01.png"></image>
+        <view class="head_right_name">收藏</view>
+      </view>
+      <view class="head_right_v" wx:else data-id='{{info.id}}' catchtap="gztap">
+        <image src="../../image/sc_1.png"></image>
+        <view class="head_right_name1">已收藏</view>
+      </view>
+      <!-- <view class="head_right_code"><image catchtap="previewImgxc" data-src='{{wst_code}}' src="{{wst_code}}"></image></view> -->
+      <view class="head_right_code"><image catchtap="previewImgxc" data-src='{{info.qrimage}}' src="{{info.qrimage}}"></image></view>
+    </view>
+  </view>
+  <view class="addr">
+    <view class="addr_left">地址：{{info.addr}}</view>
+    <view class="addr_right">
+      <view class="addr_btn" catchtap="dhtap" data-addr='{{info.addr}}' data-name='{{info.ltd_name}}'>地址导航</view>
+    </view>
+  </view>
+  <view class="btn" catchtap="wechat">咨询报价</view>
+  <view class="title">产品展示</view>
+  <!-- <view class="sel">
+    <view wx:for='{{sel}}' class="sel_v {{selindex == index?'scol':''}}" data-index='{{index}}' catchtap="seltap">{{item.name}}</view>
+  </view> -->
+  <view class="con">
+    <image wx:for='{{image}}' src="{{item}}" data-index='{{index}}' catchtap="previewImg" mode="aspectFill"></image>
+  </view>
+  <view class="title" wx:if='{{pj.length != 0}}'>评价</view>
+  <view class="con2">
+    <view class="pj" wx:for='{{pj}}'>
+      <view class="pj_top">
+        <view class="pj_top_left"><image src="{{item.user.headurl}}"></image></view>
+        <view class="pj_top_right">
+          <view class="pj_name">{{item.user.nickname}}</view>
+          <view class="pj_lv">
+            <image wx:for='{{item.level}}' src="../../image/pj_01.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="pj_con">{{item.content}}</view>
+      <view class="pj_time">{{item.date}}</view>
+    </view>
+  </view>
+</view>

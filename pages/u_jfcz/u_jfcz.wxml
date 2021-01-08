@@ -1,0 +1,7 @@
+<!--pages/u_jfcz/u_jfcz.wxml-->
+<view class="app">
+  <input class="price" bindinput="price" value="{{price}}" type="number" placeholder="请输入您的金额" placeholder-class="pla"></input>
+  <view class="ts" wx:if='{{type == 1}}'>可获得积分：{{jf}}</view>
+  <view class="ts" wx:if='{{type == 2}}'>可获得金币：{{jf}}</view>
+  <view class="btn" catchtap="submit">支付</view>
+</view>

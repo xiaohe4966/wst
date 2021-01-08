@@ -1,0 +1,20 @@
+<!--pages/u_jfmx/u_jfmx.wxml-->
+<view class="app">
+  <scroll-view scroll-y="true" style='height:{{scrollHeight}}px'  bindscrolltolower="bindDownLoad"  bindscroll="scroll">
+  <view class="list" wx:for='{{goods}}'>
+    <view class="list_left">
+      <view class="list_left_name" wx:if='{{item.status == 1}}'>充值积分</view>
+      <view class="list_left_name" wx:if='{{item.status == 2}}'>赠送给用户</view>
+      <view class="list_left_name" wx:if='{{item.status == 3}}'>兑换商品</view>
+      <view class="list_left_name" wx:if='{{item.status == 4}}'>订单成交</view>
+      <view class="list_left_time">{{item.date}}</view>
+    </view>
+    <view class="list_right" wx:if='{{item.status == 1 || item.status == 4}}'>+{{item.score}}</view>
+    <view class="list_right" wx:if='{{item.status == 2 || item.status == 3}}'>-{{item.score}}</view>
+  </view>
+  <view class="none" wx:if='{{hidden == true}}'>
+    <image src="../../image/none.png" mode="widthFix"></image>
+    <view class="none_v">暂无积分明细!</view>
+  </view>
+  </scroll-view>
+</view>

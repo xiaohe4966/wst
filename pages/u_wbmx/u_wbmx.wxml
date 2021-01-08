@@ -1,0 +1,12 @@
+<!--pages/u_wbmx/u_wbmx.wxml-->
+<view class="app">
+  <view class="list" wx:for='{{goods}}'>
+    <view class="list_left">
+      <view class="list_left_name" wx:if='{{item.status == 1}}'>充值金币</view>
+      <view class="list_left_name" wx:if='{{item.status == 2}}'>查看信息</view>
+      <view class="list_left_time">{{item.date}}</view>
+    </view>
+    <view class="list_right" wx:if='{{item.status == 1}}'>+{{item.wanbi}}</view>
+    <view class="list_right" wx:if='{{item.status == 2}}'>-{{item.wanbi}}</view>
+  </view>
+</view>

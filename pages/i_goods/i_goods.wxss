@@ -1,0 +1,94 @@
+/* pages/i_goods/i_goods.wxss */
+page{
+  background: #eaebef;
+}
+.app{
+  width: 100%;
+  padding: 0 25rpx;
+  box-sizing: border-box;
+}
+.list{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.list_left{
+  width: 30%;
+  border-right: 1px solid #bababd;
+  overflow-y: auto;
+}
+.list_left_v{
+  width: 100%;
+  padding: 40rpx 10rpx 40rpx 30rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #bababd;
+  position: relative;
+}
+.list_left_xian{
+  width: 8rpx;
+  height: 25rpx;
+  content: '';
+  background: #306dff;
+  position: absolute;
+  top: 46rpx;
+  left: 0;
+  z-index: 11;
+}
+.list_left_name{
+  color: #a5a7aa;
+  font-size: 28rpx;
+}
+.left_col{
+  color: #000;
+  font-weight: 700;
+}
+.list_right{
+  width: 70%;
+  padding: 0 15rpx 0 50rpx;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+.list_right_v{
+  width: 100%;
+  padding: 40rpx 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.list_right_name{
+  width: 90%;
+  color: #000;
+  font-size: 28rpx;
+}
+.list_right_xz{
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.list_right_xz image{
+  width: 35rpx;
+  height: 35rpx;
+  display: block;
+}
+.xz_col{
+  color: #306dff;
+  font-weight: 700;
+}
+
+.fix_btn{
+  width: 200rpx;
+  height: 80rpx;
+  background: #306dff;
+  color: white;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  border-radius: 15rpx;
+  letter-spacing: 1px;
+  position: fixed;
+  bottom: 90rpx;
+  right: 30rpx;
+  z-index: 11;
+}

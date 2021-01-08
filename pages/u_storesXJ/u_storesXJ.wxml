@@ -1,0 +1,19 @@
+<!--pages/u_storesXJ/u_storesXJ.wxml-->
+<view class="app">
+  <view class="list" wx:for='{{list}}' data-id='{{item.ltd.uid}}' data-headimg='{{item.ltd.logo_image}}' data-nickname='{{item.ltd.ltd_name}}' catchtap="wechat">
+    <view class="list_left"><image src="{{item.ltd.logo_image}}"></image></view>
+    <view class="list_right">
+      <view class="list_name">{{item.ltd.ltd_name}} <view wx:if='{{item.msg > 0}}' class="dian"></view></view>
+      <view class="list_num">
+        <view class="list_num">
+          <view class="list_num_left">
+            <view class=list_num_v2" wx:if='{{item.msg == 0}}'>全部已读</view>
+            <view class=list_num_v" wx:else>{{item.msg}}条未读信息</view>
+          </view>
+          <view class="list_num_btn" wx:if='{{item.score_status != 2}}' data-askid='{{item.ask_id}}' data-ltd_id='{{item.ltd_id}}' catchtap="pricetap">确认订单金额</view>
+          <view class="list_num_btn2" wx:if='{{item.score_status == 2}}' data-askid='{{item.ask_id}}' data-ltd_id='{{item.ltd_id}}' catchtap="pricetap">订单完成</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

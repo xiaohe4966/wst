@@ -1,0 +1,67 @@
+/* pages/u_xjd/u_xjd.wxss */
+page{
+  background: #eaebef;
+}
+.app{
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.title{
+  width: 100%;
+  padding: 25rpx 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  color: #3f4044;
+  font-size: 28rpx;
+  font-weight: 700;
+}
+.title image{
+  width: 40rpx;
+  height: 40rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+}
+.con{
+  width: 100%;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #939599;
+}
+.con_con{
+  color: #3f4044;
+  font-size: 28rpx;
+}
+.con_radio{
+  width: 70%;
+  height: 70rpx;
+  padding-left: 15rpx;
+  box-sizing: border-box;
+  border-radius: 5rpx;
+  background: white;
+  display: flex;
+  align-items: center;
+  color: #3f4044;
+  font-size: 26rpx;
+  margin-top: 30rpx;
+}
+.con_radio image{
+  width: 35rpx;
+  height: 35rpx;
+  display: inline-block;
+  margin-right: 10rpx;
+}
+.con_img{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.con_img image{
+  width: 210rpx;
+  height: 210rpx;
+  display: inline-block;
+  margin-right: 25rpx;
+}
+.con_img image:nth-child(3n){
+  margin-right: 0;
+}

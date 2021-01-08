@@ -1,0 +1,6 @@
+<!--pages/u_kf/u_kf.wxml-->
+<view class="app">
+  <textarea class="content" bindinput="content" value="{{content}}" maxlength="-1" name="" id="" cols="30" rows="10" placeholder="输入您的留言..." placeholder-class="pla"></textarea>
+  <input class="mobile" bindinput="mobile" value="{{mobile}}" type="number" placeholder="请输入您的手机号码" placeholder-class="pla"></input>
+  <view class="btn" catchtap="submit">提交</view>
+</view>

@@ -1,0 +1,37 @@
+/* pages/u_map/u_map.wxss */
+page{
+  background: #eaebef;
+}
+.app{
+  width: 100%;
+  padding: 0 25rpx;
+  box-sizing: border-box;
+}
+.con{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20%;
+  background: white;
+  border-radius: 10rpx;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.con_title{
+  width: 100%;
+  text-align: center;
+  color: #000;
+  font-size: 40rpx;
+  font-weight: 700;
+  margin-bottom: 50rpx;
+}
+.con_img{
+  width: 100%;
+  padding-bottom: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.con_img image{
+  width: 80%;
+  display: block;
+}

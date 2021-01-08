@@ -1,0 +1,117 @@
+<!--pages/ucenter/ucenter.wxml-->
+<!-- <view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+</view> -->
+
+<view class="app">
+  <view class="head" wx:if='{{vip == 1}}'>
+    <button wx:if="{{headurl == null}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <view class="head_bao" wx:else>
+      <view class="head_left"><image src="{{headurl}}"></image></view>
+      <view class="head_con">
+        <view class="head_name">{{nickname}}(买家)</view>
+        <view class="head1_code">
+          <view class="head_code_name">积分：{{info.score}}</view>
+          <!-- <view class="head_code_btn2" catchtap="showtap">绑定店铺</view> -->
+        </view>
+      </view>
+      <view class="head_right" catchtap="codetap"><image src="../../image/i_right.png"></image></view>
+    </view>
+  </view>
+  <view class="head1" wx:else>
+    <view class="head_bao">
+      <view class="head1_left" catchtap="xqtap" data-id='{{stores.id}}'><image src="{{stores.logo_image}}"></image></view>
+      <view class="head1_con">
+        <view class="head_name">{{stores.ltd_name}}(卖家)</view>
+        <view class="head1_code">
+          <view class="head1_list">
+            <view class="head1_list_left">积分：{{stores.score}}</view>
+            <view class="head1_list_right"><view class="head_code_btn" catchtap="jfcztap" data-type='1'>积分充值</view></view>
+          </view>
+          <view class="head1_list">
+            <view class="head1_list_left">金币：{{stores.wanbi}}</view>
+            <view class="head1_list_right"><view class="head_code_btn" catchtap="jfcztap" data-type='2'>金币充值</view></view>
+          </view>
+          <!-- <view class="head_code_name">{{stores.score}} 积分</view> -->
+        </view>
+      </view>
+      <view class="head_right"><image src="../../image/i_right.png"></image></view>
+    </view>
+  </view>
+
+  <view class="con">
+    <!-- <view class="con_v" catchtap="xjdtap" wx:if='{{vip == 1}}'>
+      <image class="con_img" src="../../image/u_02.png"></image>
+      <view class="con_name">我的询价单</view>
+    </view> -->
+    <view class="con_v" catchtap="storestap" wx:if='{{vip == 1}}'>
+      <image class="con_img" src="../../image/u_02.png"></image>
+      <view class="con_name">询价商家</view>
+    </view>
+    <view class="con_v" catchtap="sctap" wx:if='{{vip == 1}}'>
+      <image class="con_img" src="../../image/u_03.png"></image>
+      <view class="con_name">我的收藏</view>
+    </view>
+    <view class="con_v" catchtap="jfdhtap" wx:if='{{vip == 1}}'>
+      <image class="con_img" src="../../image/u_01.png"></image>
+      <view class="con_name">积分兑换</view>
+    </view>
+    <view class="con_v" catchtap="jfmxtap">
+      <image class="con_img" src="../../image/u_05.png"></image>
+      <view class="con_name">积分明细</view>
+    </view>
+    <view class="con_v" catchtap="dhjltap" wx:if='{{vip == 1}}'>
+      <image class="con_img" src="../../image/u_01.png"></image>
+      <view class="con_name">兑换记录</view>
+    </view>
+    <view class="con_v" catchtap="wbtap" wx:if='{{vip == 2}}'>
+      <image class="con_img" src="../../image/u_05.png"></image>
+      <view class="con_name">金币明细</view>
+    </view>
+    <view class="con_v" catchtap="xjdStap" wx:if='{{vip == 2}}'>
+      <image class="con_img" src="../../image/u_06.png"></image>
+      <view class="con_name">询价单<text>(收到)</text></view>
+    </view>
+    <button id="con_v" open-type="contact">
+      <image class="con_img" src="../../image/u_04.png"></image>
+      <view class="con_name">平台客服</view>
+    </button>
+    <view class="con_v" catchtap="showtap" wx:if='{{vip == 1}}'>
+      <image class="con_img" src="../../image/u_08.png"></image>
+      <view class="con_name">绑定商家</view>
+    </view>
+    <!-- <view class="con_v" catchtap="kftap">
+      <image class="con_img" src="../../image/u_04.png"></image>
+      <view class="con_name">平台客服</view>
+    </view> -->
+  </view>
+</view>
+
+<view class="vip_btn" wx:if='{{stores != null}}' catchtap="viptap">切换角色</view>
+
+<button id="fix_user" wx:if="{{headurl == null}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
+<!-- <button id="fix_mobile" wx:if="{{mobile == ''}}" open-type="getPhoneNumber" bindgetphonenumber='getPhoneNumber'></button> -->
+
+<view class="fix" wx:if='{{fix == true}}'>
+  <view class="fix_v">
+    <view class="fix_view">
+      <view class="fix_title">绑定店铺</view>
+      <view class="fix_con">
+        <view class="fix_list">
+          <view class="fix_list_left">手机号：</view>
+          <view class="fix_list_right"><input bindinput="tell" value="{{tell}}" type="number" placeholder="请输入手机号" placeholder-class="pla"></input></view>
+        </view>
+      </view>
+      <view class="fix_btn">
+        <view class="fix_btn_v fix_qx" catchtap="hidetap">取消</view>
+        <view class="fix_btn_v fix_qd" catchtap="fixtap">确定</view>
+      </view>
+    </view>
+  </view>
+</view>

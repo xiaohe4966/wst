@@ -1,0 +1,58 @@
+/* pages/u_sc/u_sc.wxss */
+page{
+  background: #eaebef;
+}
+.app{
+  width: 100%;
+  padding: 0 25rpx;
+  box-sizing: border-box;
+}
+.list{
+  width: 100%;
+  padding: 30rpx 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid #939599;
+  display: flex;
+  align-items: center;
+}
+.list_left{
+  width: 22%;
+}
+.list_left image{
+  width: 130rpx;
+  height: 130rpx;
+  display: block;
+  border-radius: 6rpx;
+}
+.list_right{
+  width: 78%;
+}
+.list_name{
+  width: 100%;
+  color: #3f4044;
+  font-size: 30rpx;
+  font-weight: 700;
+  margin-bottom: 15rpx;
+}
+.list_lv{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.list_lv_left{
+  display: flex;
+  align-items: center;
+  color: #3f4044;
+  font-size: 28rpx;
+}
+.list_lv_left image{
+  width: 40rpx;
+  height: 40rpx;
+  display: inline-block;
+  margin-left: 6rpx;
+}
+.list_lv_right{
+  color: #3f4044;
+  font-size: 28rpx;
+}

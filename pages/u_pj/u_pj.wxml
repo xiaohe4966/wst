@@ -1,0 +1,13 @@
+<!--pages/u_pj/u_pj.wxml-->
+<view class="app">
+  <view class="top">
+    <block wx:for="{{one_2}}" wx:key="index">
+      <image catchtap='in_xin' id='{{index+1}}' data-index='{{item}}' data-in='use_sc2' src='../../image/pj_01.png'></image>
+    </block>
+    <block wx:for="{{two_2}}" wx:key="index">
+      <image catchtap='in_xin' id='{{index+1}}' data-index='{{item}}' data-in='use_sc' src='../../image/pj_1.png'></image>
+    </block>
+  </view>
+  <textarea class="content" bindinput="content" maxlength="-1" name="" placeholder="输入您的留言..." placeholder-class="pla"></textarea>
+  <view class="btn" catchtap="submit">提交</view>
+</view>

@@ -1,0 +1,12 @@
+<!--pages/u_xjdF/u_xjdF.wxml-->
+<view class="app">
+  <view class="list" wx:for='{{list}}' data-id='{{item.id}}' catchtap="xqtap">
+    <view class="list_left">
+      <view class="list_name">{{item.text}}</view>
+      <view class="list_time">{{item.createtime}}</view>
+    </view>
+    <view class="list_right">
+      <image src="../../image/i_right.png"></image>
+    </view>
+  </view>
+</view>

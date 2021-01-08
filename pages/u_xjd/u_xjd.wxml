@@ -1,0 +1,26 @@
+<!--pages/u_xjd/u_xjd.wxml-->
+<view class="app">
+  <view class="title"><image src="../../image/i_01.png"></image> 产品</view>
+  <view class="con">
+    <view class="con_con">{{info.goods_str}}</view>
+  </view>
+  <view class="title"><image src="../../image/x_01.png"></image> 留言</view>
+  <view class="con">
+    <view class="con_con">{{info.text}}</view>
+    <view class="con_radio" wx:if='{{info.voice}}' catchtap="playtap">
+      <image src="../../image/x_02.png"></image> 60s
+    </view>
+  </view>
+  <view class="title" wx:if='{{image.length != 0}}'><image src="../../image/i_04.png"></image> 图片上传</view>
+  <view class="con" wx:if='{{image.length != 0}}'>
+    <view class="con_img">
+      <image data-index='{{index}}' catchtap="previewImg" wx:for='{{image}}' src="{{item}}"></image>
+    </view>
+  </view>
+  <view class="title" wx:if='{{info.files}}'><image src="../../image/i_05.png"></image> 文件上传</view>
+  <view class="con" wx:if='{{info.files}}'>
+    <view class="con_img">
+      <image catchtap="opentap" src="../../image/x_03.png"></image>
+    </view>
+  </view>
+</view>

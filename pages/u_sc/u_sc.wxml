@@ -1,0 +1,29 @@
+<!--pages/u_sc/u_sc.wxml-->
+<view class="app">
+  <view class="list" wx:for='{{list}}' data-id='{{item.id}}' catchtap="xqtap">
+    <view class="list_left"><image src="{{item.logo_image}}"></image></view>
+    <view class="list_right">
+      <view class="list_name">{{item.ltd_name}}</view>
+      <view class="list_lv">
+        <view class="list_lv_left">信誉：
+          <block wx:if='{{item.level <= 5}}'>
+            <image wx:for="{{item.level}}" src="../../image/lv_01.png"></image>
+          </block>
+          <block wx:if='{{5 < item.level && item.level <= 10}}'>
+            <image wx:for="{{item.level}}" src="../../image/lv_02.png"></image>
+          </block>
+          <block wx:if='{{10 < item.level && item.level <= 15}}'>
+            <image wx:for="{{item.level}}" src="../../image/lv_03.png"></image>
+          </block>
+          <block wx:if='{{15 < item.level && item.level <= 20}}'>
+            <image wx:for="{{item.level}}" src="../../image/lv_04.png"></image>
+          </block>
+          <block wx:if='{{20 < item.level && item.level <= 25}}'>
+            <image wx:for="{{item.level}}" src="../../image/lv_05.png"></image>
+          </block>
+        </view>
+        <view class="list_lv_right">{{item.level}}级</view>
+      </view>
+    </view>
+  </view>
+</view>

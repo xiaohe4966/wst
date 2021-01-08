@@ -1,0 +1,111 @@
+/* pages/stores/stores.wxss */
+page{
+  background: #eaebef;
+}
+.app{
+  width: 100%;
+  padding: 30rpx 25rpx 0;
+  box-sizing: border-box;
+}
+.head{
+  width: 100%;
+  height: 70rpx;
+  background: white;
+  border-radius: 50rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+.head_left{
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.head_left image{
+  width: 35rpx;
+  height: 35rpx;
+  display: block;
+}
+.head_right{
+  width: 85%;
+  color: #999;
+  font-size: 26rpx;
+}
+
+.list{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.list_left{
+  width: 30%;
+  border-right: 1px solid #bababd;
+  overflow-y: auto;
+}
+.list_left_v{
+  width: 100%;
+  padding: 40rpx 10rpx 40rpx 30rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #bababd;
+  position: relative;
+}
+.list_left_xian{
+  width: 8rpx;
+  height: 25rpx;
+  content: '';
+  background: #306dff;
+  position: absolute;
+  top: 46rpx;
+  left: 0;
+  z-index: 11;
+}
+.list_left_name{
+  color: #a5a7aa;
+  font-size: 28rpx;
+}
+.left_col{
+  color: #000;
+  font-weight: 700;
+}
+.list_right{
+  width: 70%;
+  padding: 0 15rpx;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+.list_right_bao{
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+.list_name{
+  width: 100%;
+  padding: 0 15rpx;
+  box-sizing: border-box;
+  font-size: 26rpx;
+  color: #000;
+  display: flex;
+  align-items: center;
+}
+.list_name image{
+  width: 30rpx;
+  height: 30rpx;
+  display: inline-block;
+  margin-left: 25rpx;
+}
+.list_goods{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.list_goods image{
+  width: 140rpx;
+  height: 140rpx;
+  display: inline-block;
+  border-radius: 5rpx;
+  margin-top: 15rpx;
+  margin-right: 15rpx;
+}
+.list_goods image:nth-child(3n){
+  margin-right: 0;
+}

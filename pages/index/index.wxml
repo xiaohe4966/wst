@@ -1,0 +1,57 @@
+<!--index.wxml-->
+<view class="app">
+  <view class="list one_bot" catchtap="goodstap">
+    <view class="list_left one_list"><image src="../../image/i_01.png"></image> 石材品种</view>
+    <view class="list_right">
+      <!-- <text>啦啦</text> -->
+      <image src="../../image/i_right.png"></image>
+    </view>
+  </view>
+  <view class="list" catchtap="yintap">
+    <view class="list_left"><image src="../../image/i_02.png"></image> 语音留言</view>
+    <view class="list_right">
+      <text wx:if='{{video}}'>已留言</text>
+      <image src="../../image/i_right.png"></image>
+    </view>
+  </view>
+  <view class="list" catchtap="contap">
+    <view class="list_left"><image src="../../image/i_03.png"></image> 文字留言</view>
+    <view class="list_right">
+      <text wx:if='{{content}}'>已留言</text>
+      <image src="../../image/i_right.png"></image>
+    </view>
+  </view>
+  <view class="list2">
+    <view class="list2_left"><image src="../../image/i_04.png"></image> 图片上传</view>
+    <view class="list2_right">
+      <image bindtap='chooseimage1' src="{{tempFilePaths1[0]}}"></image>
+      <image bindtap='chooseimage2' src="{{tempFilePaths2[0]}}"></image>
+      <image bindtap='chooseimage3' src="{{tempFilePaths3[0]}}"></image>
+    </view>
+  </view>
+  <view class="list2">
+    <view class="list2_left"><image src="../../image/i_05.png"></image> 文件上传</view>
+    <view class="list2_right">
+      <image bindtap="uploadWord" src="{{tempFilePaths4}}"></image>
+    </view>
+  </view>
+  <view class="list3">
+    <view class="list3_left"><image src="../../image/i_06.png"></image> 已选产品</view>
+    <view class="list3_right">
+      <view class="list3_right_v" wx:for='{{cun_goods}}'>{{item.marking}} <image catchtap="deltap" data-index='{{index}}' src="../../image/i_del2.png"></image></view>
+    </view>
+  </view>
+  <view class="btn" catchtap="submit">发送</view>
+</view>
+
+<view class="fix" wx:if='{{fix == true}}'>
+  <view  class="fix_v">
+    <image class="fix_img" src="../../image/i_OK.png" mode="widthFix"></image>
+    <view class="fix_text">发送成功！</view>
+  </view>
+  <view class="fix_btn" catchtap="hidetap">确认</view>
+  <view class="fix_ts">对方已收到您的询价单，请耐心等待回复</view>
+</view>
+
+<button id="fix_user" wx:if="{{headurl == null}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
+<button id="fix_mobile" wx:if="{{mobile == ''}}" open-type="getPhoneNumber" bindgetphonenumber='getPhoneNumber'></button>

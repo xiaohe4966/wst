@@ -1,0 +1,318 @@
+<!--pages/u_wechat/u_wechat.wxml-->
+<!-- <scroll-view scroll-y="true" style='height:{{scrollHeight}}px;' bindscrolltoupper="bindUpLoad" bindscroll="scroll"> -->
+<view class="app" id="scrollpage">
+  <!-- <view class="con">
+    <view class="time">2020-03-11 10:22</view>
+    <view class="con_right">
+      <view class="con_right_v">
+        <view class="con_right_v1">
+          <view class="con_right_name">{{nickname}}</view>
+          <view class="con_right_con">
+            <view class="con_right_con_v"><image src="../../image/lt_03.png"></image></view>
+            <view class="con_right_con_v2">
+              <view class="con_right_con_v2_name">订单已确认，可点击评论</view>
+              <view class="con_right_con_v2_price">金额：<text>10000元</text></view>
+              <view class="con_right_con_v2_price">可获得积分：<text>200</text></view>
+            </view>
+          </view>
+        </view>
+        <view class="con_right_v2"><image src="{{headurl}}"></image></view>
+      </view>
+    </view>
+  </view> -->
+  <!-- <view class="con">
+    <view class="time">2020-03-11 10:22</view>
+    <view class="con_left">
+      <view class="con_left_v">
+        <view class="con_left_v2"><image src="{{headimgS}}"></image></view>
+        <view class="con_left_v1">
+          <view class="con_left_name">{{nicknameS}}</view>
+          <view class="con_left_con">
+            <view class="con_left_con_v5"><image src="../../image/lt_02.png"></image></view>
+            <view class="con_left_con_v4">您好！您有一份新的询价单请点击查看。</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view> -->
+  <view class="con" catchtap="asktap" wx:if='{{chat_status == 0}}'>
+    <view class="con_right">
+      <view class="con_right_v">
+        <view class="con_right_v1">
+          <view class="con_right_name">{{nickname}}</view>
+          <view class="con_right_con">
+            <view class="con_right_con_v"><image src="../../image/lt_02.png"></image></view>
+            <view class="con_right_con_v2">
+              <view class="con_right_con_v2_name">您好！您有一份新的询价单请点击查看。</view>
+            </view>
+          </view>
+        </view>
+        <view class="con_right_v2"><image src="{{headurl}}"></image></view>
+      </view>
+    </view>
+  </view>
+  <block wx:for='{{list}}'>
+    <block wx:if='{{uid == item.send_uid}}'>
+      <view class="con" wx:if='{{item.type == 1}}'>
+        <view class="time">{{item.date}}</view>
+        <view class="con_right">
+          <view class="con_right_v">
+            <view class="con_right_v1">
+              <view class="con_right_name">{{nickname}}</view>
+              <view class="con_right_con3">
+                <view class="con_right_con3_v">{{item.content}}</view>
+              </view>
+            </view>
+            <view class="con_right_v2"><image src="{{headurl}}"></image></view>
+          </view>
+        </view>
+      </view>
+      <view class="con" wx:if='{{item.type == 10}}'>
+        <view class="time">{{item.date}}</view>
+        <view class="con_right">
+          <view class="con_right_v">
+            <view class="con_right_v1">
+              <view class="con_right_name">{{nickname}}</view>
+              <view class="con_right_con3">
+                <view class="con_right_con3_v2" catchtap="playtap" data-yin='{{item.content}}'><image src="../../image/x_2.png"></image></view>
+              </view>
+            </view>
+            <view class="con_right_v2"><image src="{{headurl}}"></image></view>
+          </view>
+        </view>
+      </view>
+      <view class="con" wx:if='{{item.type == 11}}'>
+        <view class="time">{{item.date}}</view>
+        <view class="con_right">
+          <view class="con_right_v">
+            <view class="con_right_v1">
+              <view class="con_right_name">{{nickname}}</view>
+              <view class="con_right_con3">
+                <view class="con_right_con3_v"><image catchtap="previewImg" data-src='{{item.content}}' src="{{item.content}}"></image></view>
+              </view>
+            </view>
+            <view class="con_right_v2"><image src="{{headurl}}"></image></view>
+          </view>
+        </view>
+      </view>
+      <view class="con" wx:if='{{item.type == 12}}'>
+        <view class="time">{{item.date}}</view>
+        <view class="con_right">
+          <view class="con_right_v">
+            <view class="con_right_v1">
+              <view class="con_right_name">{{nickname}}</view>
+              <view class="con_right_con3">
+                <view class="con_right_con3_v"><image catchtap="opentap" data-files='{{item.content}}' src="../../image/word.png"></image></view>
+              </view>
+            </view>
+            <view class="con_right_v2"><image src="{{headurl}}"></image></view>
+          </view>
+        </view>
+      </view>
+      <view class="con" wx:if='{{item.type == 4}}'>
+        <view class="time">{{item.date}}</view>
+        <view class="con_right">
+          <view class="con_right_v">
+            <view class="con_right_v1">
+              <view class="con_right_name">{{nickname}}</view>
+              <view class="con_right_con" catchtap="submit" data-price='{{ren_price}}'>
+                <view class="con_right_con_v"><image src="../../image/lt_03.png"></image></view>
+                <view class="con_right_con_v2">
+                  <view class="con_right_con_v2_name">请点击并确认订单金额</view>
+                  <view class="con_right_con_v2_price">金额：<text>{{ren_price}}元</text></view>
+                  <view class="con_right_con_v2_price">可获得积分：<text>{{ren_score}}</text></view>
+                </view>
+              </view>
+            </view>
+            <view class="con_right_v2"><image src="{{headurl}}"></image></view>
+          </view>
+        </view>
+      </view>
+      <view class="con" wx:if='{{item.type == 5}}'>
+        <view class="time">{{item.date}}</view>
+        <view class="con_right">
+          <view class="con_right_v">
+            <view class="con_right_v1">
+              <view class="con_right_name">{{nickname}}</view>
+              <view class="con_right_con">
+                <view class="con_right_con_v"><image src="../../image/lt_03.png"></image></view>
+                <view class="con_right_con_v2">
+                  <view class="con_right_con_v2_name">订单已确认金额</view>
+                  <view class="con_right_con_v2_price">金额：<text>{{sj_price}}元</text></view>
+                  <view class="con_right_con_v2_price">可获得积分：<text>{{sj_score}}</text></view>
+                </view>
+              </view>
+            </view>
+            <view class="con_right_v2"><image src="{{headurl}}"></image></view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="con" wx:if='{{item.type == 1}}'>
+        <view class="time">{{item.date}}</view>
+        <view class="con_left">
+          <view class="con_left_v">
+            <view class="con_left_v2"><image src="{{headimgS}}"></image></view>
+            <view class="con_left_v1">
+              <view class="con_left_name">{{nicknameS}}</view>
+              <view class="con_left_con1">{{item.content}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="con" wx:if='{{item.type == 10}}'>
+        <view class="time">{{item.date}}</view>
+        <view class="con_left">
+          <view class="con_left_v">
+            <view class="con_left_v2"><image src="{{headimgS}}"></image></view>
+            <view class="con_left_v1">
+              <view class="con_left_name">{{nicknameS}}</view>
+              <view class="con_left_con4">
+                <view class="con_right_con4_v2" catchtap="playtap" data-yin='{{item.content}}'><image src="../../image/x_02.png"></image></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="con" wx:if='{{item.type == 11}}'>
+        <view class="time">{{item.date}}</view>
+        <view class="con_left">
+          <view class="con_left_v">
+            <view class="con_left_v2"><image src="{{headimgS}}"></image></view>
+            <view class="con_left_v1">
+              <view class="con_left_name">{{nicknameS}}</view>
+              <view class="con_left_con1"><image catchtap="previewImg" data-src='{{item.content}}' src="{{item.content}}"></image></view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="con" wx:if='{{item.type == 12}}'>
+        <view class="time">{{item.date}}</view>
+        <view class="con_left">
+          <view class="con_left_v">
+            <view class="con_left_v2"><image src="{{headimgS}}"></image></view>
+            <view class="con_left_v1">
+              <view class="con_left_name">{{nicknameS}}</view>
+              <view class="con_left_con1"><image catchtap="opentap" data-files='{{item.content}}' src="../../image/word.png"></image></view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="con" wx:if='{{item.type == 4}}'>
+        <view class="time">{{item.date}}</view>
+        <view class="con_left">
+          <view class="con_left_v">
+            <view class="con_left_v2"><image src="{{headimgS}}"></image></view>
+            <view class="con_left_v1">
+              <view class="con_left_name">{{nicknameS}}</view>
+              <view class="con_left_con" catchtap="submit" data-price='{{ren_price}}'>
+                <view class="con_left_con_v2">
+                  <view class="con_left_con_v2_name">请点击并确认订单金额</view>
+                  <view class="con_left_con_v2_price">金额：<text>{{ren_price}}元</text></view>
+                  <view class="con_left_con_v2_price">可获得积分：<text>{{ren_score}}</text></view>
+                </view>
+                <view class="con_left_con_v"><image src="../../image/lt_02.png"></image></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="con" wx:if='{{item.type == 5}}'>
+        <view class="time">{{item.date}}</view>
+        <view class="con_left">
+          <view class="con_left_v">
+            <view class="con_left_v2"><image src="{{headimgS}}"></image></view>
+            <view class="con_left_v1">
+              <view class="con_left_name">{{nicknameS}}</view>
+              <view class="con_left_con">
+                <view class="con_left_con_v2">
+                  <view class="con_left_con_v2_name">订单金额已确认</view>
+                  <view class="con_left_con_v2_price">金额：<text>{{ren_price}}元</text></view>
+                  <view class="con_left_con_v2_price">可获得积分：<text>{{ren_score}}</text></view>
+                </view>
+                <view class="con_left_con_v"><image src="../../image/lt_02.png"></image></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </block>
+  
+
+  <!-- <view class="con">
+    <view class="time">2020-03-11 10:22</view>
+    <view class="con_left">
+      <view class="con_left_v">
+        <view class="con_left_v2"><image src="{{headimgS}}"></image></view>
+        <view class="con_left_v1">
+          <view class="con_left_name">{{nicknameS}}</view>
+          <view class="con_left_con">
+            <view class="con_left_con_v2">
+              <view class="con_left_con_v2_name">请点击查看并确认订单</view>
+              <view class="con_left_con_v2_price">金额：<text>10000元</text></view>
+              <view class="con_left_con_v2_price">可获得积分：<text>200</text></view>
+            </view>
+            <view class="con_left_con_v"><image src="../../image/lt_02.png"></image></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view> -->
+  
+  
+</view>
+<!-- </scroll-view> -->
+<view class="fix">
+  <view class="fix_top">
+    <view class="fix_top_left">
+      <image wx:if='{{ask == false}}' src="../../image/l_06.png" catchtap="askxztap"></image>
+      <image wx:else src="../../image/l_6.png" catchtap="askxztap"></image>
+    </view>
+    <view class="fix_top_cen">
+      <view wx:if='{{ask == false}}' class="fix_top_inp"><input value="{{content}}" type="text" confirm-type='send' bindconfirm='send'></input></view>
+      <view wx:else class="fix_top_ask" catchlongpress="handleRecordStart" catchtouchend="handleRecordStop">按住 说话</view>
+    </view>
+    <view class="fix_top_right"><image catchtap="addxztap" src="../../image/l_07.png"></image></view>
+  </view>
+  <view class="fix_con" wx:if='{{add == true}}'>
+    <image bindtap='chooseimage1' src="../../image/l_02.png"></image>
+    <image bindtap='chooseimage2' src="../../image/l_03.png"></image>
+    <image bindtap='chooseimage3' src="../../image/l_04.png"></image>
+    <image data-aa='{{score_status}}' wx:if='{{stores == 0 && score_status != 2}}' bindtap="xjtap" src="../../image/l_05.png"></image>
+  </view>
+  <!-- <input class="fix_left" bindinput="content" value="{{content}}" type="text"></input>
+  <view class="fix_btn">
+    <view class="fix_btn_v" catchtap="send">发送</view>
+  </view> -->
+</view>
+
+
+<view class="fix1" wx:if='{{fix == true && stores == 1}}'>
+  <view class="fix1_v">
+    <view class="fix1_view">
+      <image class="fix1_img" src="../../image/l_01.png" mode="widthFix"></image>
+      <view class="fix1_js">每天有免费的次数，用完之后需要金币</view>
+      <view class="fix1_js">所需金币：{{look_wan}}金币</view>
+      <view class="fix1_btn" catchtap="cztap">立即支付</view>
+    </view>
+  </view>
+</view>
+
+
+<view class="fix2" wx:if='{{fix2 == true}}'>
+  <view class="fix2_v">
+    <view class="fix2_view">
+      <view class="fix2_title">确认价格</view>
+      <view class="fix2_con">
+        <input class="fix2_con_inp" bindinput="price" value="{{price}}" type="number" placeholder="请输入价格" placeholder-class="pla"></input>
+        <view class="fix2_con_jf">可得积分：{{jf}}</view>
+      </view>
+      <view class="fix2_btn">
+        <view class="fix2_btn_v fix2_qx" catchtap="hidetap">取消</view>
+        <view class="fix2_btn_v fix2_qd" catchtap="clicktap">确定</view>
+      </view>
+    </view>
+  </view>
+</view>

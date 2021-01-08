@@ -1,0 +1,7 @@
+<!--pages/u_map/u_map.wxml-->
+<view class="app">
+  <view class="con">
+    <view class="con_title">推广二维码</view>
+    <view class="con_img"><image src="{{my_qr}}" mode="widthFix"></image></view>
+  </view>
+</view>

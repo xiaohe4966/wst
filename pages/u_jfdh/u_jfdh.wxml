@@ -1,0 +1,27 @@
+<!--pages/u_jfdh/u_jfdh.wxml-->
+<view class="app">
+  <scroll-view scroll-y="true" style='height:{{scrollHeight}}px'  bindscrolltolower="bindDownLoad"  bindscroll="scroll">
+  <view class="head">
+    <image class="head_img1" src="../../image/jf_01.png" mode="widthFix"></image>
+    <image class="head_img2" src="../../image/jf_02.png" mode="widthFix"></image>
+    <view class="head_v">
+      <view class="head_title">我的积分</view>
+      <view class="head_jf">{{score}} (积分)</view>
+    </view>
+  </view>
+  <view class="con">
+    <view class="list" wx:for='{{goods}}'>
+      <view class="list_left"><image src="{{item.image}}"></image></view>
+      <view class="list_right">
+        <view class="list_name">{{item.goods_name}}</view>
+        <view class="list_con">可全额兑换{{item.description}}一份</view>
+        <view class="list_btn" data-id='{{item.id}}' data-jf='{{item.score}}' data-name='{{item.goods_name}}' catchtap="dhtap"><text>{{item.score}}</text>积分兑换</view>
+      </view>
+    </view>
+  </view>
+  <view class="none" wx:if='{{hidden == true}}'>
+    <image src="../../image/none.png" mode="widthFix"></image>
+    <view class="none_v">暂无积分商品!</view>
+  </view>
+  </scroll-view>
+</view>

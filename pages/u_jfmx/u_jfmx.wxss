@@ -1,0 +1,32 @@
+/* pages/u_jfmx/u_jfmx.wxss */
+page{
+  background: #eaebef;
+}
+.app{
+  width: 100%;
+  padding: 25rpx;
+  box-sizing: border-box;
+}
+.list{
+  width: 100%;
+  padding: 30rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #939599;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.list_left_name{
+  color: #707070;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+}
+.list_left_time{
+  color: #707070;
+  font-size: 26rpx;
+}
+.list_right{
+  color: #306dff;
+  font-size: 30rpx;
+  font-weight: 700;
+}

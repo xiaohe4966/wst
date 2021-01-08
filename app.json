@@ -1,0 +1,70 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/u_jfdhjl/u_jfdhjl",
+    "pages/u_map/u_map",
+    "pages/ucenter/ucenter",
+    "pages/u_wechat/u_wechat",
+    "pages/stores/stores",
+    "pages/u_storesXJprice/u_storesXJprice",
+    "pages/u_storesXJ/u_storesXJ",
+    "pages/u_stores/u_stores",
+    "pages/u_xjdPirce/u_xjdPirce",
+    "pages/u_xjd/u_xjd",
+    "pages/s_storesxq/s_storesxq",
+    "pages/s_search/s_search",
+    "pages/u_wbmx/u_wbmx",
+    "pages/u_jfdh/u_jfdh",
+    "pages/u_xjdS/u_xjdS",
+    "pages/u_xjdF/u_xjdF",
+    "pages/u_sc/u_sc",
+    "pages/u_address/u_address",
+    "pages/u_pj/u_pj",
+    "pages/u_kf/u_kf",
+    "pages/u_jfmx/u_jfmx",
+    "pages/u_jfcz/u_jfcz",
+    "pages/i_yin/i_yin",
+    "pages/i_con/i_con",
+    "pages/i_goods/i_goods",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#eaebef",
+    "navigationBarTitleText": "万石通",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#698fba",
+    "backgroundColor": "white",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/footer_1.png",
+        "selectedIconPath": "image/footer_01.png",
+        "text": "群发报价"
+      },
+      {
+        "pagePath": "pages/stores/stores",
+        "iconPath": "image/footer_2.png",
+        "selectedIconPath": "image/footer_02.png",
+        "text": "搜索"
+      },
+      {
+        "pagePath": "pages/ucenter/ucenter",
+        "iconPath": "image/footer_3.png",
+        "selectedIconPath": "image/footer_03.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位"
+    }
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

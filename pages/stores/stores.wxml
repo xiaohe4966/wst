@@ -1,0 +1,29 @@
+<!--pages/stores/stores.wxml-->
+<view class="app">
+  <view class="head" catchtap="searchtap">
+    <view class="head_left"><image src="../../image/search.png"></image></view>
+    <view class="head_right">搜索</view>
+  </view>
+  <view class="list">
+    <view class="list_left" style='height:{{scrollHeight}}px;'>
+      <view class="list_left_v" wx:for='{{cate}}' data-id='{{item.id}}' data-index='{{index}}' catchtap="headtap">
+        <view class="{{headindex == index?'list_left_xian':''}}"></view>
+        <view class="list_left_name {{headindex == index?'left_col':''}}">{{item.type_name}}</view>
+      </view>
+    </view>
+    <view class="list_right" style='height:{{scrollHeight}}px;'>
+      <scroll-view scroll-y="true" style='height:{{scrollHeight}}px'  bindscrolltolower="bindDownLoad"  bindscroll="scroll">
+      <view class="list_right_bao" wx:for='{{goods}}' data-id='{{item.id}}' data-index='{{index}}'>
+        <view class="list_name" catchtap="soutap" data-name='{{item.marking}}'>{{item.marking}} <image src="../../image/s_bot.png"></image></view>
+        <view class="list_goods">
+          <image wx:for='{{item.ltd}}' src="{{item.logo_image}}" data-id='{{item.id}}' catchtap="xqtap"></image>
+        </view>
+      </view>
+      <view class="none" wx:if='{{hidden == true}}'>
+        <image src="../../image/none.png" mode="widthFix"></image>
+        <view class="none_v">暂无商品信息!</view>
+      </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

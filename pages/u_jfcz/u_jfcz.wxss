@@ -1,0 +1,43 @@
+/* pages/u_jfcz/u_jfcz.wxss */
+page{
+  background: #eaebef;
+}
+.app{
+  width: 100%;
+  padding: 25rpx;
+  box-sizing: border-box;
+}
+.price{
+  width: 100%;
+  height: 80rpx;
+  padding-left: 15rpx;
+  box-sizing: border-box;
+  color: #000;
+  font-size: 28rpx;
+  background: white;
+  border-radius: 5rpx;
+}
+.pla{
+  color: #999;
+  font-size: 28rpx;
+}
+.ts{
+  width: 100%;
+  padding: 15rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  color: #757577;
+}
+.btn{
+  width: 100%;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  background: #306dff;
+  color: white;
+  font-size: 30rpx;
+  font-weight: 700;
+  margin-top: 50rpx;
+  border-radius: 10rpx;
+  box-shadow: #a4b1d2 0 10px 13px;
+}

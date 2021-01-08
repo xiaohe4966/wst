@@ -1,0 +1,21 @@
+<!--pages/i_yin/i_yin.wxml-->
+<view class="app" style='height:{{scrollHeight}}px;'>
+  <view class="con">
+    <view class="con_v">
+      <view class="con_v2" catchtap="yintap" wx:if='{{select == false}}'>
+        <view class="con_v3">
+          <image src="../../image/i_08.png"></image>
+        </view>
+      </view>
+      <view class="con_v2" catchtap="stoptap" wx:else>
+        <view class="con_v3 xz_col">
+          <image src="../../image/i_07.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="ts" wx:if='{{select == false}}'>点击按钮，进行留言</view>
+  <view class="time" wx:if='{{select == true}}'><text>{{num}}</text>S</view>
+  <view class="bo" wx:if="{{url != ''}}" catchtap="botap">录音播放</view>
+  <view class="fot">Tips：请注意，您有60s的留言时间</view>
+</view>

@@ -1,0 +1,28 @@
+<!--pages/i_goods/i_goods.wxml-->
+<view class="app">
+  <view class="list">
+    <view class="list_left" style='height:{{scrollHeight}}px;'>
+      <view class="list_left_v" wx:for='{{cate}}' data-id='{{item.id}}' data-index='{{index}}' catchtap="headtap">
+        <view class="{{headindex == index?'list_left_xian':''}}"></view>
+        <view class="list_left_name {{headindex == index?'left_col':''}}">{{item.type_name}}</view>
+      </view>
+    </view>
+    <view class="list_right" style='height:{{scrollHeight}}px;'>
+      <scroll-view scroll-y="true" style='height:{{scrollHeight}}px'  bindscrolltolower="bindDownLoad"  bindscroll="scroll">
+      <view class="list_right_v" wx:for='{{goods}}' data-id='{{item.id}}' data-index='{{index}}' catchtap="xztap">
+        <view class="list_right_name {{item.select == true?'xz_col':''}}">{{item.marking}}</view>
+        <view class="list_right_xz">
+          <image wx:if='{{item.select == false}}' src="../../image/i_wxz.png"></image>
+          <image wx:else src="../../image/i_xz.png"></image>
+        </view>
+      </view>
+      <view class="none" wx:if='{{hidden == true}}'>
+        <image src="../../image/none.png" mode="widthFix"></image>
+        <view class="none_v">暂无商品信息!</view>
+      </view>
+      <view style="width:100%;height:200rpx;"></view>
+      </scroll-view>
+    </view>
+  </view>
+</view>
+<view class="fix_btn" catchtap="backtap">确定</view>

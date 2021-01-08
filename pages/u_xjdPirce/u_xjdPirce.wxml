@@ -1,0 +1,47 @@
+<!--pages/u_xjd/u_xjd.wxml-->
+<view class="app">
+  <view class="title"><image src="../../image/i_01.png"></image> 产品</view>
+  <view class="con">
+    <view class="con_con">{{info.goods_str}}</view>
+  </view>
+  <view class="title"><image src="../../image/x_01.png"></image> 留言</view>
+  <view class="con">
+    <view class="con_con">{{info.text}}</view>
+    <view class="con_radio" wx:if='{{info.voice}}' catchtap="playtap">
+      <image src="../../image/x_02.png"></image> 60s
+    </view>
+  </view>
+  <view class="title" wx:if='{{image.length != 0}}'><image src="../../image/i_04.png"></image> 图片上传</view>
+  <view class="con" wx:if='{{image.length != 0}}'>
+    <view class="con_img">
+      <image data-index='{{index}}' catchtap="previewImg" wx:for='{{image}}' src="{{item}}"></image>
+    </view>
+  </view>
+  <view class="title" wx:if='{{info.files}}'><image src="../../image/i_05.png"></image> 文件上传</view>
+  <view class="con" wx:if='{{info.files}}'>
+    <view class="con_img">
+      <image catchtap="opentap" src="../../image/x_03.png"></image>
+    </view>
+  </view>
+  <view class="title" wx:if='{{status < 3}}'><image src="../../image/u_07.png"></image> 金额</view>
+  <view class="con" wx:if='{{status < 3}}'>
+   <input class="con_inp" bindinput="price" value="{{price}}" type="digit" placeholder="输入您的金额" placeholder-class="pla"></input>
+   <view class="inp_jf">可得积分：{{jf}}</view>
+  </view>
+  <view class="btn" catchtap="submit" wx:if='{{status < 3}}'>确认金额</view>
+  <!-- <view class="title" wx:if='{{status == 3 && score_status == 1}}'><image src="../../image/u_07.png"></image> 积分</view>
+  <view class="con" wx:if='{{status == 3 && score_status == 1}}'>
+   <view class="inp_jf">可得积分：{{score}}</view>
+  </view>
+  <view class="btn" catchtap="submitJF" wx:if='{{status == 3 && score_status == 1}}'>确认积分</view> -->
+</view>
+
+<view class="fix" wx:if='{{fix == true}}'>
+  <view class="fix_v">
+    <view class="fix_view">
+      <image class="fix_img" src="../../image/l_01.png" mode="widthFix"></image>
+      <view class="fix_js">所需金币：{{look_wan}}金币</view>
+      <view class="fix_btn" catchtap="cztap">立即支付</view>
+    </view>
+  </view>
+</view>

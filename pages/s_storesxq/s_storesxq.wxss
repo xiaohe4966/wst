@@ -1,0 +1,255 @@
+/* pages/s_storesxq/s_storesxq.wxss */
+page{
+  background: #eaebef;
+}
+.app{
+  width: 100%;
+  padding: 30rpx 25rpx;
+  box-sizing: border-box;
+}
+.head_img{
+  width: 100%;
+}
+.head_img image{
+  width: 100%;
+  height: 350rpx;
+  display: block;
+}
+.head{
+  width: 100%;
+  display: flex;
+  margin-top: 25rpx;
+}
+.head_left{
+  width: 78%;
+}
+.head_name{
+  width: 100%;
+  color: #3f4044;
+  font-size: 28rpx;
+  font-weight: 700;
+}
+.head_lv{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 28rpx;
+}
+.head_lv_v1{
+  color: #3f4044;
+  font-size: 28rpx;
+  font-weight: 700;
+}
+.head_lv_v2{
+  display: flex;
+  align-items: center;
+}
+.head_lv_v2 image{
+  width: 40rpx;
+  height: 40rpx;
+  display: inline-block;
+  margin-left: 6rpx;
+}
+.head_lv_v3{
+  padding-left: 15rpx;
+  color: #306dff;
+  font-size: 24rpx;
+  margin-left: 8rpx;
+  position: relative;
+}
+.head_lv_v3::after{
+  content: '';
+  width: 4rpx;
+  height: 22rpx;
+  background: #306dff;
+  position: absolute;
+  top: 7rpx;
+  left: 0;
+  z-index: 11;
+}
+.head_con{
+  width: 100%;
+  margin-top: 28rpx;
+}
+.head_con_t1{
+  color: #3f4044;
+  font-size: 28rpx;
+  font-weight: 700;
+}
+.head_con_t2{
+  color: #306dff;
+  font-size: 28rpx;
+}
+.head_right{
+  width: 22%;
+}
+.head_right_v{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.head_right_v image{
+  width: 40rpx;
+  height: 40rpx;
+  display: block;
+}
+.head_right_name{
+  color: #ec0000;
+  font-size: 26rpx;
+  font-weight: 700;
+  margin-top: 6rpx;
+}
+.head_right_name1{
+  color: #a6a6ab;
+  font-size: 26rpx;
+  font-weight: 700;
+  margin-top: 6rpx;
+}
+.head_right_code{
+  width: 100%;
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: center;
+}
+.head_right_code image{
+  width: 120rpx;
+  height: 120rpx;
+  display: block;
+}
+.addr{
+  width: 100%;
+  padding: 30rpx 0 25rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+.addr_left{
+  width: 75%;
+  color: #3f4044;
+  font-size: 28rpx;
+}
+.addr_right{
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.addr_btn{
+  width: 140rpx;
+  height: 40rpx;
+  text-align: center;
+  line-height: 40rpx;
+  border: 1px solid #306dff;
+  border-radius: 5rpx;
+  font-size: 24rpx;
+  color: #306dff;
+}
+.btn{
+  width: 100%;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  background: #306dff;
+  color: white;
+  font-size: 30rpx;
+  font-weight: 700;
+  border-radius: 10rpx;
+  box-shadow: #a4b1d2 0 6px 13px;
+}
+.title{
+  width: 100%;
+  color: #3f4044;
+  font-size: 32rpx;
+  font-weight: 700;
+  margin: 40rpx 0 20rpx;
+}
+.sel{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sel_v{
+  width: 47%;
+  height: 55rpx;
+  text-align: center;
+  line-height: 55rpx;
+  font-size: 26rpx;
+  color: #3f4044;
+  background: white;
+  border-radius: 50rpx;
+}
+.scol{
+  color: #306dff;
+  height: 53rpx;
+  line-height: 53rpx;
+  border: 1px solid #306dff;
+}
+.con{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.con image{
+  width: 48%;
+  height: 188rpx;
+  display: block;
+  margin-top: 30rpx;
+}
+
+.con2{
+  width: 100%;
+}
+.pj{
+  width: 100%;
+  padding: 30rpx 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid #3f4044;
+}
+.pj_top{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.pj_top_left{
+  width: 15%;
+}
+.pj_top_left image{
+  width: 80rpx;
+  height: 80rpx;
+  display: block;
+  border-radius: 50%;
+}
+.pj_top_right{
+  width: 85%;
+}
+.pj_name{
+  width: 100%;
+  color: #000;
+  font-size: 28rpx;
+}
+.pj_lv{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.pj_lv image{
+  width: 30rpx;
+  height: 30rpx;
+  display: inline-block;
+}
+.pj_con{
+  width: 100%;
+  font-size: 26rpx;
+  color: #1a1a1a;
+  margin: 25rpx 0;
+}
+.pj_time{
+  width: 100%;
+  text-align: right;
+  color: #666;
+  font-size: 26rpx;
+}

@@ -1,0 +1,27 @@
+<!--pages/u_stores/u_stores.wxml-->
+<view class="app">
+  <view class="list" wx:for='{{list}}' data-askid='{{item.ask_id}}' data-id='{{item.ltd.uid}}' data-headimg='{{item.ltd.logo_image}}' data-nickname='{{item.ltd.ltd_name}}' data-ltd_id='{{item.ltd_id}}' catchtap="wechat">
+    <view class="list_left"><image src="{{item.ltd.logo_image}}"></image></view>
+    <view class="list_right">
+      <view class="list_name">{{item.ltd.ltd_name}} <view wx:if='{{item.msg > 0}}' class="dian"></view></view>
+      <view class="list_num">
+        <view class="list_num">
+          <view class="list_num_left">
+            <view class="list_num_v2">ID:{{item.ask_id}}</view>
+            <block wx:if='{{item.end_status == 1}}'>
+              <view class=list_num_v2">订单已关闭</view>
+            </block>
+            <block wx:else>
+              <view class=list_num_v2" wx:if='{{item.msg == 0}}'>全部已读</view>
+              <view class=list_num_v" wx:else>{{item.msg}}条未读信息</view>
+            </block>
+            <view class="list_num_v3">{{item.msg_date}}</view>
+          </view>
+          <!-- <view class="list_num_btn" wx:if='{{item.ask_order.score_status != 2}}' data-askid='{{item.ask_id}}' data-ltd_id='{{item.ltd_id}}' catchtap="pricetap">发起确认金额</view>
+          <view class="list_num_btn2" wx:if='{{item.ask_order.score_status == 2}}' data-askid='{{item.ask_id}}' data-ltd_id='{{item.ltd_id}}' catchtap="pricetap">订单完成</view> -->
+          <view class="list_del" data-id='{{item.id}}' catchtap="deltap">删除</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,24 @@
+<!--pages/u_xjdS/u_xjdS.wxml-->
+<view class="app">
+  <view class="list" wx:for='{{list}}' data-id='{{item.user.id}}' data-headimg='{{item.user.headurl}}' data-nickname='{{item.user.nickname}}' data-askid='{{item.ask_id}}' data-ltd_id='{{item.ltd_id}}' catchtap="wechat">
+    <view class="list_left"><image src="{{item.user.headurl}}"></image></view>
+    <view class="list_right">
+      <view class="list_name">{{item.user.nickname}} <view wx:if='{{item.msg > 0}}' class="dian"></view></view>
+      <view class="list_num">
+        <view class="list_num_left">
+          <view class="list_num_v2">ID:{{item.ask_id}}</view>
+          <block wx:if='{{item.end_status == 1}}'>
+            <view class=list_num_v2">订单已关闭</view>
+          </block>
+          <block wx:else>
+            <view class=list_num_v2" wx:if='{{item.msg == 0}}'>全部已读</view>
+            <view class=list_num_v" wx:else>{{item.msg}}条未读信息</view>
+          </block>
+          <view class="list_num_v3">{{item.msg_date}}</view>
+        </view>
+        <!-- <view class="list_num_btn" data-askid='{{item.ask_id}}' catchtap="pricetap">查看订单</view> -->
+        <view class="list_del" data-askid='{{item.ask_id}}' catchtap="deltap">删除</view>
+      </view>
+    </view>
+  </view>
+</view>

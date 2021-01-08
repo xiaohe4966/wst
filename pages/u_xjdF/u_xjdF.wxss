@@ -1,0 +1,43 @@
+/* pages/u_xjdF/u_xjdF.wxss */
+page{
+  background: #eaebef;
+}
+.app{
+  width: 100%;
+  padding: 0 25rpx;
+  box-sizing: border-box;
+}
+.list{
+  width: 100%;
+  padding: 30rpx 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid #939599;
+  display: flex;
+  align-items: center;
+}
+.list_left{
+  width: 95%;
+}
+.list_name{
+  width: 100%;
+  color: #3f4044;
+  font-size: 30rpx;
+  font-weight: 700;
+  margin-bottom: 15rpx;
+  position: relative;
+}
+.list_time{
+  color: #666;
+  font-size: 26rpx;
+}
+.list_right{
+  width: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.list_right image{
+  width: 35rpx;
+  height: 35rpx;
+  display: block;
+}
